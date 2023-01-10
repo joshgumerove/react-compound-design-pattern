@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.tab {
+  border: 1px solid #000;
+}
+
+.headsContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item {
+  background-color: red;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+}
