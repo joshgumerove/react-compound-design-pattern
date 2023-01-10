@@ -19,13 +19,13 @@ function App() {
         </Tab.HeadsContainer>
         <Tab.ContentContainer>
           <Tab.ContentItem index={0}>
-            <h1>I am content</h1>
+            <h1>I am content first</h1>
           </Tab.ContentItem>
           <Tab.ContentItem index={1}>
-            <h1>I am content</h1>
+            <h1>I am content second</h1>
           </Tab.ContentItem>
           <Tab.ContentItem index={2}>
-            <h1>I am content</h1>
+            <h1>I am content third</h1>
           </Tab.ContentItem>
         </Tab.ContentContainer>
       </Tab>

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import "./Tab.css";
 
-const TabContext = React.createContext();
+const TabContext = createContext();
 
 const Tab = ({ currentTab, onChange, children }) => {
   return (
@@ -18,15 +18,29 @@ Tab.HeadsContainer = ({ children }) => {
 };
 
 Tab.Item = ({ label, index, children }) => {
-  return <div className="item">{label}</div>;
+  const { currentTab, onChange } = useContext(TabContext);
+  const handleClick = () => {
+    onChange(index);
+  };
+  return (
+    <div
+      className={`item ${currentTab === index ? "active" : ""}`}
+      onClick={handleClick}
+    >
+      {label}
+    </div>
+  );
 };
 
 Tab.ContentContainer = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className="contentContainer">{children}</div>;
 };
 
 Tab.ContentItem = ({ index, children }) => {
-  return <div>{children}</div>;
+  const { currentTab } = useContext(TabContext);
+  return currentTab === index ? <div>{children}</div> : null;
 };
 
 export default Tab;
+
+// should become equal when the index and the current tab are equal
